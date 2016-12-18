@@ -30,7 +30,7 @@ namespace Portfolio.Models
             }).Wait();
 
 
-            JObject jsonResponse = JsonConvert.DesrializeObject > (response.Content);
+            JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
             return projectList;
         }
