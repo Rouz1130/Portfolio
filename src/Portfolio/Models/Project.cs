@@ -18,12 +18,12 @@ namespace Portfolio.Models
         {
 
             var client = new RestClient("https://api.github.com/users/rouz1130/repos");
-            var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Projects.json", Method.GET);
+            var request = new RestRequest(/*"Accounts/" + EnvironmentVariables.AccountSid + "/Projects.json",*/ Method.GET);
             
             request.AddParameter("access_token","ded0c0da5407eb87e1f5ff7964b47079f10a6d3b");
             request.AddHeader("User-Agent", "rouz1130");
             // .star not sure if needs to be there after v3, might just have to do with more information time of project.
-            request.AddHeader("Accept", "application/vnd.github.v3.star+json");
+            request.AddHeader("Accept", "application/vnd.github.v3.+json");
 
 
             var response = new RestResponse();
@@ -34,8 +34,8 @@ namespace Portfolio.Models
 
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
-            // might not need []
-            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
+            // might not need []// took it out fixed error. could not serialize the ["projects"]
+            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse.ToString());
             return projectList;
         }
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
