@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
+using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,14 @@ namespace Portfolio.Models
     {
         public string name { get; set; }
         public string stargazer_count { get; set; }
+
         public static List<Project> GetProjects()
         {
 
             var client = new RestClient("https://api.github.com/users/rouz1130/repos");
             var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Projects.json", Method.GET);
             
-            request.AddParameter("access_token" ,"ded0c0da5407eb87e1f5ff7964b47079f10a6d3b");
+            request.AddParameter("access_token","ded0c0da5407eb87e1f5ff7964b47079f10a6d3b");
             request.AddHeader("User-Agent", "rouz1130");
             // .star not sure if needs to be there after v3, might just have to do with more information time of project.
             request.AddHeader("Accept", "application/vnd.github.v3.star+json");
@@ -36,7 +38,7 @@ namespace Portfolio.Models
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
             return projectList;
         }
-        public static Task<IRestResponse> GetResponseContentAsynch(RestClient theClient, RestRequest theRequest)
+        public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
             var tcs = new TaskCompletionSource<IRestResponse>();
             theClient.ExecuteAsync(theRequest, response =>

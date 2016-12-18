@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Portfolio
 {
- 
+
     public class Startup
     {
         public IConfigurationRoot Configuration { get; set; }
@@ -19,41 +19,32 @@ namespace Portfolio
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath);
-            //.AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
-       
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-            //services.AddEntityFramework()
-            //    .AddDbContext<GitHubStarsContext>(options =>
-            //        options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            //services.AddIdentity<ApplicationUser, IdentityRole>()
-            //    .AddEntityFrameworkStores<GitHubStarsContext>()
-            //    .AddDefaultTokenProviders();
         }
-
-        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseStaticFiles();
             loggerFactory.AddConsole();
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            //app.UseIdentity();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            app.Run(async (error) =>
+
+
+            if (env.IsDevelopment())
             {
-                await error.Response.WriteAsync("Error Page");
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync(" error.");
             });
         }
     }
