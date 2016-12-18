@@ -1,6 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Rouz Portfolio";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AboutLayout.cshtml";
 }
 
-<h1>Projects</h1>
+@model IEnumerable<Portfolio.Models.Project>
+
+
+<div class="contact container-nav">
+  <h1 class="aboutP">Projects</h1>
+    <hr />
+    <p>      
+   @foreach (var Project in Model)
+   {
+     <p><i class="fa fa-star fa-2x" style="color:gold"></i><b class="bold">Projects:</b> @Html.DisplayFor(modelItem => Project.name):@Html.DisplayFor(modelItem => Project.stargazer_count)</p>
+    }
+    </p>
+</div>
