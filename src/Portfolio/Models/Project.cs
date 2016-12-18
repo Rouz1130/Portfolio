@@ -12,9 +12,9 @@ namespace Portfolio.Models
     {
         public string name { get; set; }
         public string stargazer_count { get; set; }
-
         public static List<Project> GetProjects()
         {
+
             var client = new RestClient("https://api.github.com/users/rouz1130/repos");
             var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Projects.json", Method.GET);
             
