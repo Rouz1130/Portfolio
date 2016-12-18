@@ -10,8 +10,8 @@ namespace Portfolio.Models
 {
     public class Project
     {
-        public string Name { get; set; }
-        public string Starred { get; set; }
+        public string name { get; set; }
+        public string stargazer_count { get; set; }
 
         public static List<Project> GetProjects()
         {
@@ -20,7 +20,8 @@ namespace Portfolio.Models
             
             request.AddParameter("access_token" ,"ded0c0da5407eb87e1f5ff7964b47079f10a6d3b");
             request.AddHeader("User-Agent", "rouz1130");
-            request.AddHeader("Accept", "application/vnd.github.v3+json");
+            // .star not sure if needs to be there after v3, might just have to do with more information time of project.
+            request.AddHeader("Accept", "application/vnd.github.v3.star+json");
 
 
             var response = new RestResponse();
@@ -31,6 +32,7 @@ namespace Portfolio.Models
 
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
+            // might not need []
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
             return projectList;
         }
