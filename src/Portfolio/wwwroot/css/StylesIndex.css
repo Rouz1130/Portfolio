@@ -5,7 +5,6 @@ body {
 }
 
 
-
 figure.snip0071 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
@@ -98,6 +97,14 @@ figure.snip0071 a {
   bottom: 0;
   position: absolute;
   z-index: 1;
+}
+.aboutP{
+  font-family: 'Comfortaa', cursive;
+  font-weight:300;
+  color:white;
+  background:#00BC99;
+  font-size:2em;
+  text-align:center;
 }
 figure.snip0071.blue figcaption {
   background: #20638f;
