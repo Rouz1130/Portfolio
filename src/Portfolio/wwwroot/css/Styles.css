@@ -33,12 +33,12 @@ div.top {
   width:300px;
   float:right;
 }
-.user i.fa-flash {
+.user i.fa-bell {
   position:absolute;
   top:10px;
   left:10px;
 }
-.user i.fa-flash span {
+.user i.fa-bell span {
   font-size:10px;
   position:absolute;
   top:5px;
