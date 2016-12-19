@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300,700|Open+Sans:100,400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/family=Roboto:400,300,600,400italic" rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/js/Scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/Styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <div id="page">
+        <div id="page-content">
+        </div>
+        <div class="top">
+            <div>
+                <div class="logo">
+                    Portfolio
+                    <span class="small">&laquo;</span>
+                </div>
+                <div class="content">
+                    <div class="user">
+                        <i class="fa fa-bell fa-2x">
+                            <span>+99</span>
+                        </i>
+                        <span id="name"><a href="#"> Rouz Majlessi</a></span>
+                        <div id="profilepic"></div>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+        <div class="sidebar">
+            <nav id="left">
+                <ul>
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")<nos></nos><i class="fa fa-home fa-2x"></i></a><span></span></li>
+                    <br />
+                    <li>@Html.ActionLink("Projects", "Projects", "Home")<nos></nos><i class="fa fa-folder-open fa-2x"></i></a><span></span></li>
+                    <Br />
+                    <li>@Html.ActionLink("About", "About", "Home")<nos></nos><i class="fa fa-user fa-2x"></i></a><span></span></li>
+                    <br />
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</body>
+</html>
