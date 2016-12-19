@@ -32,3 +32,4 @@ if ($(window).width() <= 360) {
     $("#name").css("width", "calc(100% - 55px)")
     $("#home-nav li").css({ "float": 0, "width": "100%" })
 }
+

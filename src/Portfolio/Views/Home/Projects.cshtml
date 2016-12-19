@@ -8,11 +8,11 @@
 
 <div class="contact container-nav">
   <h1 class="aboutP">Projects</h1>
-    <hr />
+  <hr />
     <p>      
-   @foreach (var Project in Model)
+   @foreach (var Project in Model.Take(3))
    {
-     <p><i class="fa fa-star fa-2x" style="color:gold"></i><b class="bold">Projects:</b> @Html.DisplayFor(modelItem => Project.name):@Html.DisplayFor(modelItem => Project.stargazers_count)</p>
+     <p><i class="fa fa-star fa-2x" style="color:gold"></i><b class="bold">Projects:</b><b> @Html.DisplayFor(modelItem => Project.name)</b>:<b>@Html.DisplayFor(modelItem => Project.stargazers_count)</b></p>
     }
     </p>
 </div>
