@@ -1,7 +1,7 @@
 ﻿*{margin:0;padding:0;}
 a{text-decoration:none;color:inherit}
 body {
-  background:#ddd
+  background:#e5f9e5;
 }
 #page {
   width:100%;
@@ -13,7 +13,7 @@ div.top {
   right:0px;
   left:0px;
   height:50px;
-  background:white;
+  background:#262626;
   box-shadow: 0 2px .1px rgba(0,0,0,.3);
 }
 .top div.content {
@@ -63,7 +63,7 @@ div.top {
   font-weight:400;
 }
 #name:hover span{
-  color:#00BC99
+  color:#00BC99;
 }
 #name i {
   cursor:pointer;
@@ -84,8 +84,8 @@ div.top {
 div.logo {
   font-family: 'Comfortaa', cursive;
   font-weight:300;
-  color:white;
-  background:#00BC99;
+  color:#e5f9e5;
+  background:#3F3F3F;
   font-size:2.5em;
   text-align:center;
   -webkit-text-stroke: 0.35px;
@@ -168,7 +168,7 @@ div.sidebar {
   font-weight:500;
 }
 .sidebar li.active i,sidebar li.hover i {
-  color:#00BC99;
+  color:#e5f9e5;
 }
 .sidebar li a {
   padding-bottom:10px;

@@ -10,7 +10,7 @@
   <h1 class="aboutP">Projects</h1>
   <hr />
     <p>      
-   @foreach (var Project in Model.Take(3))
+   @foreach (var Project in Model.Take(4))
    {
      <p><i class="fa fa-star fa-2x" style="color:gold"></i><b class="bold">Projects:</b><b> @Html.DisplayFor(modelItem => Project.name)</b>:<b>@Html.DisplayFor(modelItem => Project.stargazers_count)</b></p>
     }
